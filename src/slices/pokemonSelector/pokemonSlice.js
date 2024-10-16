@@ -18,8 +18,15 @@ export const pokemonSlice = createSlice({
             state.isLoading = false;
             state.page = action.payload.page
             state.pokemons = action.payload.pokemons;
+        },
+        incrementPage: (state)=>{
+            state.page++
+        },
+        decrementPage: (state)=>{
+            if(state.page >1) state.page--
         }
+
     }
 })
 
-export const { startLoadingPokemons, setPokemons } = pokemonSlice.actions
+export const { startLoadingPokemons, setPokemons, incrementPage,decrementPage } = pokemonSlice.actions
